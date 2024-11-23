@@ -1,0 +1,29 @@
+﻿  7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(205,5): error C2086: 'int n': redefinition
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(38,5): message : see declaration of 'n'
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(205,8): error C2086: 'int m': redefinition
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(38,8): message : see declaration of 'm'
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(205,11): error C2086: 'int t': redefinition
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(38,11): message : see declaration of 't'
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(205,14): error C2086: 'int s': redefinition
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(38,14): message : see declaration of 's'
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(206,13): error C2086: 'std::vector<int,std::allocator<int>> adj[20]': redefinition
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(39,13): message : see declaration of 'adj'
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(207,6): error C2086: 'bool visited[20]': redefinition
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(40,6): message : see declaration of 'visited'
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(208,5): error C2086: 'int parent[20]': redefinition
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(41,5): message : see declaration of 'parent'
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(211,6): error C2084: function 'void inp(void)' already has a body
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(44,6): message : see previous definition of 'inp'
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(226,6): error C2084: function 'void DFS(int)' already has a body
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(60,6): message : see previous definition of 'DFS'
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(233,13): error C2065: 'DFS': undeclared identifier
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(239,6): error C2084: function 'void BFS(int)' already has a body
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(73,6): message : see previous definition of 'BFS'
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(260,6): error C2084: function 'void Path(int,int)' already has a body
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(94,6): message : see previous definition of 'Path'
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(266,5): error C2065: 'DFS': undeclared identifier
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(338,5): error C2084: function 'int main(void)' already has a body
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(172,5): message : see previous definition of 'main'
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(340,5): error C2065: 'inp': undeclared identifier
+D:\CauTrucDuLieu&GiaiThuat.cpp\DoThi\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp\7.TimDuongDiTrenDoThiKhongCoTrongSo.cpp.cpp(341,5): error C2065: 'Path': undeclared identifier

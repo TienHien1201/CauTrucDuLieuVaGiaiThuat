@@ -1,0 +1,215 @@
+<template>
+  <div class="modal-content" style="display: flex">
+    <div class="cart-items" style="flex: 0 0 70%; margin-right: 20px">
+      <h3>Thông tin sản phẩm trong giỏ hàng</h3>
+      <table style="width: 100%" class="text-center table">
+        <tr>
+          <th>HÌNH</th>
+          <th>SẢN PHẨM</th>
+          <th>Kích Cỡ</th>
+          <th>Đơn giá</th>
+          <th>Số lượng</th>
+          <th>Tiền</th>
+          <th></th>
+        </tr>
+        <tr v-for="item in cart" :key="item.id">
+          <td><img :src="item.image" style="height: 100px; width: 100px" /></td>
+          <td class="align-middle">{{ item.name }}</td>
+          <td class="align-middle">{{ item.selectedSize }}</td>
+          <td class="align-middle">{{ item.selectedPrice }}</td>
+          <td class="align-middle">
+            <button @click="decreaseQuantity(item)">-</button>
+            {{ item.quantity }}
+            <button @click="increaseQuantity(item)">+</button>
+          </td>
+          <td class="align-middle">
+            {{ parseFloat(item.selectedPrice.replace(/[^0-9.-]+/g, '')) * item.quantity }} VNĐ
+          </td>
+          <td class="align-middle">
+            <button class="btn btn-danger" @click="removeProduct(item)">Remove</button>
+          </td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>Tổng tiền: {{ totalPrice }} VNĐ</th>
+          <th>Tổng số lượng: {{ totalQuantity }}</th>
+          <th><button class="btn btn-danger" @click="clearCart">Xóa hết</button></th>
+        </tr>
+      </table>
+    </div>
+
+    <div class="order-info" style="flex: 1">
+      <h3>Thông tin người đặt hàng</h3>
+      <form @submit.prevent="handleSubmit">
+        <div>
+          <input
+            type="text"
+            id="name"
+            v-model="orderInfo.name"
+            placeholder="Tên người đặt"
+            required
+            class="input-field"
+          />
+        </div>
+        <div>
+          <input
+            type="tel"
+            id="phone"
+            v-model="orderInfo.phone"
+            placeholder="Số điện thoại"
+            required
+            class="input-field"
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            id="address"
+            v-model="orderInfo.address"
+            placeholder="Địa chỉ nhận hàng"
+            required
+            class="input-field"
+          />
+        </div>
+        <div>
+          <label>Phương thức thanh toán</label>
+          <div class="payment-method-line"></div>
+          <div class="payment-options">
+            <label>
+              <input type="radio" value="tiền mặt" v-model="orderInfo.paymentMethod" /> Tiền mặt
+            </label>
+            <label>
+              <input type="radio" value="zaloPay" v-model="orderInfo.paymentMethod" /> ZaloPay
+            </label>
+            <label>
+              <input type="radio" value="momo" v-model="orderInfo.paymentMethod" /> MoMo
+            </label>
+            <label>
+              <input type="radio" value="thẻ ngân hàng" v-model="orderInfo.paymentMethod" /> Thẻ ngân hàng
+            </label>
+          </div>
+        </div>
+        <button type="submit" style="color: white; background-color: brown">Thanh toán</button>
+      </form>
+    </div>
+
+    <div v-if="showSuccessMessage" class="success-message">
+      <p>Thanh toán thành công!</p>
+      <button @click="closeSuccessMessage">Đóng</button>
+    </div>
+  </div>
+</template>
+
+<script>
+import { useCartStore } from '../Store/store';
+
+export default {
+  data() {
+    return {
+      orderInfo: {
+        name: '',
+        phone: '',
+        address: '',
+        paymentMethod: '',
+      },
+      showSuccessMessage: false,
+    };
+  },
+  computed: {
+    cart() {
+      const cartStore = useCartStore();
+      return cartStore.cartItems;
+    },
+    totalPrice() {
+      return useCartStore().totalPrice();
+    },
+    totalQuantity() {
+      return useCartStore().totalQuantity();
+    },
+  },
+  methods: {
+    removeProduct(item) {
+      useCartStore().removeFromCart(item);
+    },
+    increaseQuantity(item) {
+      useCartStore().addToCart(item, item.selectedSize, item.selectedPrice);
+    },
+    decreaseQuantity(item) {
+      useCartStore().decreaseQuantity(item);
+    },
+    clearCart() {
+      useCartStore().clearCart();
+    },
+    handleSubmit() {
+      if (!this.totalQuantity) {
+        alert('Giỏ hàng của bạn trống. Vui lòng thêm sản phẩm trước khi thanh toán.');
+        return;
+      }
+
+      // Giảm số lượng sản phẩm trong kho (có thể gửi đến server nếu cần)
+      // Thêm logic thanh toán ở đây nếu cần
+
+      this.showSuccessMessage = true;
+      this.clearCart();
+
+      // Đặt lại thông tin đơn hàng
+      this.orderInfo = {
+        name: '',
+        phone: '',
+        address: '',
+        paymentMethod: '',
+      };
+    },
+    closeSuccessMessage() {
+      this.showSuccessMessage = false;
+    },
+  },
+};
+</script>
+
+<style>
+.modal-content {
+  display: flex;
+  background: #d6ddb88c;
+}
+.cart-items {
+  margin-top: 50px;
+  flex: 1;
+  margin-right: 20px;
+}
+.order-info {
+  margin-top: 50px;
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.input-field {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+.payment-method-line {
+  height: 2px;
+  background-color: green;
+  margin: 5px 0;
+}
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.success-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+</style>

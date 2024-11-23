@@ -1,0 +1,5 @@
+Nguyen Van C, N13DCCN179, 10/12/1995, 8
+Nguyen Van B, N14DCCN189, 10/7/1996, 8.9
+Nguyen Van Teo, N15DCCN189, 9/6/1997, 9
+Nguyen Van C, N13DCCN181, 8/9/1995, 9.5
+Nguyen Van B, N14DCCN185, 18/10/1995, 9.5
